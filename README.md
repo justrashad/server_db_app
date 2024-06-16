@@ -10,6 +10,7 @@ The Server Management Application is a comprehensive web-based tool designed to 
 - **Delete Server**: Remove servers from the list individually, with confirmation prompts to ensure deliberate actions.
 - **Mass Delete Servers**: Select multiple servers and delete them simultaneously, with a confirmation prompt to prevent mistakes.
 - **File Upload**: Upload CSV files to bulk import server data into MongoDB. The application handles the parsing and insertion of data, ensuring a seamless import process.
+- **Verify Import**: Verify that the CSV file data has been successfully imported into MongoDB.
 - **Search**: Quickly find servers by system name or IP address using the search functionality.
 - **Responsive Design**: The frontend is built with React, ensuring a responsive and dynamic user experience.
 
@@ -146,9 +147,40 @@ To perform a restore, run the following script:
 ./restore.sh
 ```
 
+## Verify Import
+
+The verify-import feature ensures that the data from the uploaded CSV file has been successfully imported into the MongoDB database. This functionality reads the CSV file, processes the data, and checks that each record has been inserted into the database.
+
+### How It Works
+
+1. **File Upload**: The user uploads a CSV file containing server data through the file upload component.
+2. **Processing**: The server processes the CSV file, reads its contents, and removes any Byte Order Mark (BOM) if present.
+3. **Data Parsing**: The server parses the CSV data and prepares it for insertion into the MongoDB database.
+4. **Database Insertion**: The parsed data is inserted into the MongoDB database.
+5. **Verification**: The server verifies that all records from the CSV file have been successfully inserted into the database.
+
+### Accessing the Verify-Import Endpoint
+
+After uploading the CSV file, you can access the verify-import endpoint to check the import status. The URL for this endpoint is:
+
+```
+http://localhost:5000/verify-import
+```
+
+### Example Log Output
+
+During the import process, log messages provide insight into each step:
+
+- Reading file: `/path/to/uploaded/file.csv`
+- Row: `{ "systemName": "Server1", "ipAddress": "192.168.1.1", ... }`
+- Servers to Insert: `[{ "systemName": "Server1", "ipAddress": "192.168.1.1", ... }]`
+- File imported successfully
+
+These log messages help in identifying any issues during the import process and confirm the successful import of data.
+
 ## PM2 Usage
 
-PM2 is a production-grade process manager for Node.js applications that allows you to keep applications alive forever, reload them without downtime, and facilitate common system admin tasks. 
+PM2 is a production-grade process manager for Node.js applications that allows you to keep applications alive forever, reload them without downtime, and facilitate common system admin tasks.
 
 ### Installation
 
