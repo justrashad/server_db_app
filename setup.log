@@ -1,0 +1,658 @@
+[0;32mNo processes found on port 5000.[0m
+[0;32mNo processes found on port 3000.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+The following additional packages will be installed:
+  python3-cliapp python3-markdown python3-ttystatus python3-zombie-imp
+Suggested packages:
+  python3-xdg python-markdown-doc
+The following NEW packages will be installed:
+  cmdtest python3-cliapp python3-markdown python3-ttystatus python3-zombie-imp
+0 upgraded, 5 newly installed, 0 to remove and 36 not upgraded.
+Need to get 165 kB of archives.
+After this operation, 837 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 python3-cliapp all 1.20180812.1-6 [44.6 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu noble/main amd64 python3-markdown all 3.5.2-1 [72.0 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 python3-ttystatus all 0.38-4 [14.7 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 python3-zombie-imp all 0.0.2-2 [11.9 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu noble/universe amd64 cmdtest all 0.32.14.gcdfe14e-6 [22.1 kB]
+Fetched 165 kB in 0s (450 kB/s)
+Selecting previously unselected package python3-cliapp.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 126731 files and directories currently installed.)
+Preparing to unpack .../python3-cliapp_1.20180812.1-6_all.deb ...
+Unpacking python3-cliapp (1.20180812.1-6) ...
+Selecting previously unselected package python3-markdown.
+Preparing to unpack .../python3-markdown_3.5.2-1_all.deb ...
+Unpacking python3-markdown (3.5.2-1) ...
+Selecting previously unselected package python3-ttystatus.
+Preparing to unpack .../python3-ttystatus_0.38-4_all.deb ...
+Unpacking python3-ttystatus (0.38-4) ...
+Selecting previously unselected package python3-zombie-imp.
+Preparing to unpack .../python3-zombie-imp_0.0.2-2_all.deb ...
+Unpacking python3-zombie-imp (0.0.2-2) ...
+Selecting previously unselected package cmdtest.
+Preparing to unpack .../cmdtest_0.32.14.gcdfe14e-6_all.deb ...
+Unpacking cmdtest (0.32.14.gcdfe14e-6) ...
+Setting up python3-ttystatus (0.38-4) ...
+Setting up python3-zombie-imp (0.0.2-2) ...
+Setting up python3-cliapp (1.20180812.1-6) ...
+Setting up python3-markdown (3.5.2-1) ...
+Setting up cmdtest (0.32.14.gcdfe14e-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+
+Pending kernel upgrade!
+Running kernel version:
+  6.8.0-31-generic
+Diagnostics:
+  The currently running kernel version is not the expected kernel version 6.8.0-35-generic.
+
+Restarting the system to load the new kernel will not be handled automatically, so you should consider rebooting.
+
+Restarting services...
+
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ rashad @ session #4: sshd[1693,1758]
+ rashad @ user manager service: systemd[1697]
+ root @ session #3: login[1629]
+ root @ user manager service: systemd[1532]
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mNo processes found on port 5000.[0m
+[0;32mNo processes found on port 3000.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mKilling processes on port 5000...[0m
+[0;32mKilling processes on port 3000...[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:5 https://deb.nodesource.com/node_18.x nodistro InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mKilling processes on port 5000...[0m
+[0;32mKilling processes on port 3000...[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mKilling processes on port 5000...[0m
+[0;32mKilling processes on port 3000...[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 https://deb.nodesource.com/node_18.x nodistro InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 126 kB in 1s (251 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Ign:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Hit:6 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Ign:3 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:6 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mFrontend process not running.[0m
+[0;32mBackend process not running.[0m
+[0;32mBacking up MongoDB data...[0m
+[0;32mMongoDB data backup completed.[0m
+[0;32mBacking up application files...[0m
+[0;32mApplication files backup completed.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Ign:3 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:5 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:6 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mBacking up MongoDB data...[0m
+[0;32mMongoDB data backup completed.[0m
+[0;32mBacking up application files...[0m
+[0;32mApplication files backup completed.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Ign:2 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Hit:6 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:7 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 126 kB in 1s (193 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mBacking up MongoDB data...[0m
+[0;32mMongoDB data backup completed.[0m
+[0;32mBacking up application files...[0m
+[0;32mApplication files backup completed.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:3 https://deb.nodesource.com/node_18.x nodistro InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease
+Ign:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Hit:6 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Hit:7 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mBacking up MongoDB data...[0m
+[0;32mMongoDB data backup completed.[0m
+[0;32mBacking up application files...[0m
+[0;32mApplication files backup completed.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 https://deb.nodesource.com/node_18.x nodistro InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Ign:4 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Hit:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Hit:6 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:8 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 126 kB in 1s (161 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m

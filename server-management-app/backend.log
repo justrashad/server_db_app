@@ -1,0 +1,32 @@
+(node:3156) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3156) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (/opt/systemdb/server-management-app/node_modules/mongoose/lib/connection.js:896:11)
+    at NativeConnection.openUri (/opt/systemdb/server-management-app/node_modules/mongoose/lib/connection.js:847:11) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) { 'localhost:27017' => [ServerDescription] },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined
+}
+/opt/systemdb/server-management-app/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185
+          const err = new MongooseError(message);
+                      ^
+
+MongooseError: Operation `servers.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/opt/systemdb/server-management-app/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:185:23)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+
+Node.js v18.20.3
