@@ -474,29 +474,44 @@ const App = () => {
     }, [apiUrl]);
 
     const addServer = async (server) => {
-        try {
-            const response = await axios.post(\`\${apiUrl}/servers\`, server);
-            setServers([...servers, response.data]);
-        } catch (error) {
-            console.error('Error adding server:', error);
+        if (window.confirm('Are you sure you want to add this server?')) {
+            try {
+                const response = await axios.post(\`\${apiUrl}/servers\`, server);
+                setServers([...servers, response.data]);
+            } catch (error) {
+                console.error('Error adding server:', error);
+            }
         }
     };
 
     const updateServer = async (id, updatedServer) => {
-        try {
-            const response = await axios.put(\`\${apiUrl}/servers/\${id}\`, updatedServer);
-            setServers(servers.map(server => (server._id === id ? response.data : server)));
-        } catch (error) {
-            console.error('Error updating server:', error);
+        if (window.confirm('Are you sure you want to update this server?')) {
+            try {
+                const response = await axios.put(\`\${apiUrl}/servers/\${id}\`, updatedServer);
+                setServers(servers.map(server => (server._id === id ? response.data : server)));
+            } catch (error) {
+                console.error('Error updating server:', error);
+            }
         }
     };
 
     const deleteServer = async (id) => {
-        try {
-            await axios.delete(\`\${apiUrl}/servers/\${id}\`);
-            setServers(servers.filter(server => server._id !== id));
-        } catch (error) {
-            console.error('Error deleting server:', error);
+        if (Array.isArray(id)) {
+            await Promise.all(id.map(async (serverId) => {
+                try {
+                    await axios.delete(\`\${apiUrl}/servers/\${serverId}\`);
+                    setServers(servers.filter(server => server._id !== serverId));
+                } catch (error) {
+                    console.error('Error deleting server:', error);
+                }
+            }));
+        } else {
+            try {
+                await axios.delete(\`\${apiUrl}/servers/\${id}\`);
+                setServers(servers.filter(server => server._id !== id));
+            } catch (error) {
+                console.error('Error deleting server:', error);
+            }
         }
     };
 
@@ -616,26 +631,29 @@ const ServerForm = ({ addServer, editingServer, updateServer }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (editingServer) {
-            updateServer(editingServer._id, server);
-        } else {
-            addServer(server);
+        const action = editingServer ? 'update' : 'add';
+        if (window.confirm(\`Are you sure you want to \${action} this server?\`)) {
+            if (editingServer) {
+                updateServer(editingServer._id, server);
+            } else {
+                addServer(server);
+            }
+            setServer({
+                systemName: '',
+                ipAddress: '',
+                function: '',
+                pillar: '',
+                frequency: '',
+                analyst: '',
+                majVersion: '',
+                offset: '',
+                maintDate: '',
+                time: '',
+                reboot: false,
+                custEmail: '',
+                customer: ''
+            });
         }
-        setServer({
-            systemName: '',
-            ipAddress: '',
-            function: '',
-            pillar: '',
-            frequency: '',
-            analyst: '',
-            majVersion: '',
-            offset: '',
-            maintDate: '',
-            time: '',
-            reboot: false,
-            custEmail: '',
-            customer: ''
-        });
     };
 
     return (
@@ -671,9 +689,11 @@ EOL
     # Create ServerList.js if it doesn't exist
     if [ ! -f src/components/ServerList.js ]; then
         cat <<EOL > src/components/ServerList.js
-import React from 'react';
+import React, { useState } from 'react';
 
 const ServerList = ({ servers, setEditingServer, deleteServer }) => {
+    const [selectedServers, setSelectedServers] = useState([]);
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -682,12 +702,41 @@ const ServerList = ({ servers, setEditingServer, deleteServer }) => {
         return \`\${month}/\${day}/\${year}\`;
     };
 
+    const handleSelectServer = (id) => {
+        setSelectedServers((prevSelected) =>
+            prevSelected.includes(id)
+                ? prevSelected.filter((serverId) => serverId !== id)
+                : [...prevSelected, id]
+        );
+    };
+
+    const handleDeleteSelected = () => {
+        if (window.confirm('Are you sure you want to delete the selected servers?')) {
+            selectedServers.forEach((id) => deleteServer(id));
+            setSelectedServers([]);
+        }
+    };
+
+    const handleDelete = (id) => {
+        if (window.confirm('Are you sure you want to delete this server?')) {
+            deleteServer(id);
+        }
+    };
+
     return (
         <div style={{ backgroundColor: 'white', color: 'black' }}>
             <h2 style={{ color: 'red' }}>Server List</h2>
+            <button
+                onClick={handleDeleteSelected}
+                disabled={selectedServers.length === 0}
+                style={{ backgroundColor: 'red', color: 'white', marginBottom: '10px' }}
+            >
+                Delete Selected
+            </button>
             <table border="1" style={{ backgroundColor: 'white', color: 'black' }}>
                 <thead>
                     <tr>
+                        <th>Select</th>
                         <th>System Name</th>
                         <th>IP Address</th>
                         <th>Function</th>
@@ -705,8 +754,15 @@ const ServerList = ({ servers, setEditingServer, deleteServer }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {servers.map(server => (
+                    {servers.map((server) => (
                         <tr key={server._id}>
+                            <td>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedServers.includes(server._id)}
+                                    onChange={() => handleSelectServer(server._id)}
+                                />
+                            </td>
                             <td>{server.systemName}</td>
                             <td>{server.ipAddress}</td>
                             <td>{server.function}</td>
@@ -721,8 +777,18 @@ const ServerList = ({ servers, setEditingServer, deleteServer }) => {
                             <td>{server.custEmail}</td>
                             <td>{server.customer}</td>
                             <td>
-                                <button onClick={() => setEditingServer(server)} style={{ backgroundColor: 'red', color: 'white' }}>Edit</button>
-                                <button onClick={() => deleteServer(server._id)} style={{ backgroundColor: 'red', color: 'white' }}>Delete</button>
+                                <button
+                                    onClick={() => setEditingServer(server)}
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    onClick={() => handleDelete(server._id)}
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}

@@ -1,15 +1,17 @@
 # Server Management Application
 
-This project is a Server Management Application that allows you to manage and monitor servers using a web interface. The application is built with a Node.js backend and a React frontend. It includes features such as server listing, adding, editing, deleting, and uploading CSV files to import server data into MongoDB.
+The Server Management Application is a comprehensive web-based tool designed to facilitate the management and monitoring of server infrastructure. This application provides a user-friendly interface for administrators to add, edit, delete, and search server records. It also supports bulk operations, such as mass deletion, and the ability to import server data from CSV files directly into MongoDB.
 
 ## Features
 
-- **Server Listing**: View a list of servers with their details.
-- **Add Server**: Add new servers to the list.
-- **Edit Server**: Edit existing server details.
-- **Delete Server**: Delete servers from the list.
-- **File Upload**: Upload CSV files to import server data into MongoDB.
-- **Search**: Search servers by system name or IP address.
+- **Server Listing**: View detailed information about each server, including system name, IP address, function, pillar, frequency, analyst, major version, offset, maintenance date, time, reboot status, customer email, and customer name.
+- **Add Server**: Add new servers to the list with a straightforward form. Confirmation prompts ensure that actions are intentional.
+- **Edit Server**: Modify existing server records with ease. Confirmation prompts help prevent accidental changes.
+- **Delete Server**: Remove servers from the list individually, with confirmation prompts to ensure deliberate actions.
+- **Mass Delete Servers**: Select multiple servers and delete them simultaneously, with a confirmation prompt to prevent mistakes.
+- **File Upload**: Upload CSV files to bulk import server data into MongoDB. The application handles the parsing and insertion of data, ensuring a seamless import process.
+- **Search**: Quickly find servers by system name or IP address using the search functionality.
+- **Responsive Design**: The frontend is built with React, ensuring a responsive and dynamic user experience.
 
 ## Project Structure
 
@@ -17,7 +19,7 @@ This project is a Server Management Application that allows you to manage and mo
 server-management-app/
 ├── client/
 │   ├── public/
-│   │   └── tag.jpg
+│   │   └── MDACC_Rev_RGB_TC_tag_V.jpg
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── FileUpload.js
@@ -26,9 +28,30 @@ server-management-app/
 │   │   ├── App.js
 │   │   └── index.js
 ├── uploads/
+├── backup/
+│   ├── mongo/
+│   ├── app/
 ├── server.js
 └── package.json
 ```
+
+### Client
+
+The client-side application is built using React, providing a modern and interactive user interface. The `client` directory contains the React components and related files.
+
+- **public/**: Contains static files, including the application logo.
+- **src/**: Contains the source code for the React application, including components for uploading files, managing server data, and rendering the main application interface.
+
+### Server
+
+The server-side application is built using Node.js and Express. It handles API requests from the frontend, connects to MongoDB for data storage, and manages file uploads.
+
+- **uploads/**: Directory for storing uploaded CSV files temporarily.
+- **backup/**: Directory for storing backup data.
+  - **mongo/**: Stores MongoDB backups.
+  - **app/**: Stores application file backups.
+- **server.js**: The main server file that sets up the Express application, defines API routes, and handles business logic.
+- **package.json**: Contains the project’s dependencies and scripts.
 
 ## Prerequisites
 
@@ -72,7 +95,7 @@ server-management-app/
 
 6. **Move the Logo File**
 
-   - Ensure the logo file `tag.jpg` is in the `client/public` directory.
+   - Ensure the logo file `MDACC_Rev_RGB_TC_tag_V.jpg` is in the `client/public` directory.
 
 ## Usage
 
@@ -97,7 +120,13 @@ server-management-app/
 
 ### Backup
 
-To backup MongoDB data and application files, run the following script:
+The backup functionality creates a backup of both the MongoDB database and the application files. It stores the backups in the `backup` directory.
+
+- **MongoDB Backup**: The script uses the `mongodump` command to create a backup of the MongoDB database and saves it in the `backup/mongo` directory.
+
+- **Application Files Backup**: The script copies the application files to the `backup/app` directory.
+
+To perform a backup, run the following script:
 
 ```bash
 ./backup.sh
@@ -105,11 +134,124 @@ To backup MongoDB data and application files, run the following script:
 
 ### Restore
 
-To restore MongoDB data and application files, run the following script:
+The restore functionality restores the MongoDB database and the application files from the backups stored in the `backup` directory.
+
+- **MongoDB Restore**: The script uses the `mongorestore` command to restore the MongoDB database from the backup files in the `backup/mongo` directory.
+
+- **Application Files Restore**: The script copies the application files from the `backup/app` directory back to the original location.
+
+To perform a restore, run the following script:
 
 ```bash
 ./restore.sh
 ```
+
+## PM2 Usage
+
+PM2 is a production-grade process manager for Node.js applications that allows you to keep applications alive forever, reload them without downtime, and facilitate common system admin tasks. 
+
+### Installation
+
+If you do not have PM2 installed globally, you can install it using npm:
+
+```bash
+npm install -g pm2
+```
+
+### Starting the Application with PM2
+
+1. **Start the Backend**
+
+   Start the backend server using PM2 to ensure it runs continuously and can be managed easily:
+
+   ```bash
+   pm2 start server.js --name backend
+   ```
+
+   This command will start the backend server and name the process "backend". You can check the status of the process using:
+
+   ```bash
+   pm2 status
+   ```
+
+2. **Start the Frontend**
+
+   Start the frontend development server using PM2:
+
+   ```bash
+   cd client
+   pm2 start npm --name frontend -- start
+   ```
+
+   This command will run the npm start script and name the process "frontend".
+
+### Managing PM2 Processes
+
+PM2 provides various commands to manage your processes:
+
+- **List all PM2 processes**:
+
+  ```bash
+  pm2 list
+  ```
+
+- **View logs**:
+
+  View the logs for a specific process (e.g., backend):
+
+  ```bash
+  pm2 logs backend
+  ```
+
+  View the logs for all processes:
+
+  ```bash
+  pm2 logs
+  ```
+
+- **Stop a process**:
+
+  Stop a specific process by name (e.g., frontend):
+
+  ```bash
+  pm2 stop frontend
+  ```
+
+- **Restart a process**:
+
+  Restart a specific process by name (e.g., backend):
+
+  ```bash
+  pm2 restart backend
+  ```
+
+- **Delete a process**:
+
+  Delete a specific process by name (e.g., frontend):
+
+  ```bash
+  pm2 delete frontend
+  ```
+
+### Saving the PM2 Process List
+
+To ensure your processes start automatically after a server reboot, save the PM2 process list:
+
+```bash
+pm2 save
+```
+
+This command will save the current list of processes, which can be reloaded using the startup script.
+
+### Generating a Startup Script
+
+Generate a startup script to automatically restart PM2 and your applications on system boot:
+
+```bash
+pm2 startup
+```
+
+Follow the instructions provided by the command to configure the startup script for your system.
 
 ## Deployment
 
