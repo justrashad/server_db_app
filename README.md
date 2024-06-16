@@ -1,6 +1,6 @@
 # Server Management Application
 
-This project is a Server Management Application that allows you to manage and monitor servers using a web interface. The application is built with a Node.js backend and a React frontend. It includes features such as server listing, adding, editing, deleting, and uploading CSV files to import server data into MongoDB.
+This project is a Server Management Application that allows you to manage and monitor servers using a web interface. The application is built with a Node.js backend and a React frontend. It includes features such as server listing, adding, editing, deleting, uploading CSV files to import server data into MongoDB, and mass deletion of servers.
 
 ## Features
 
@@ -8,6 +8,7 @@ This project is a Server Management Application that allows you to manage and mo
 - **Add Server**: Add new servers to the list with confirmation prompts.
 - **Edit Server**: Edit existing server details with confirmation prompts.
 - **Delete Server**: Delete servers from the list with confirmation prompts.
+- **Mass Delete Servers**: Select multiple servers and delete them at once with a confirmation prompt.
 - **File Upload**: Upload CSV files to import server data into MongoDB.
 - **Search**: Search servers by system name or IP address.
 
