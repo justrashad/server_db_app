@@ -618,3 +618,41 @@ cmdtest is already the newest version (0.32.14.gcdfe14e-6).
 [0;32mSetting up the frontend...[0m
 [0;32mCleaning up temporary files...[0m
 [0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m
+[0;32mStopping frontend and backend processes...[0m
+[0;32mBacking up MongoDB data...[0m
+[0;32mMongoDB data backup completed.[0m
+[0;32mBacking up application files...[0m
+[0;32mApplication files backup completed.[0m
+[0;32mInstalling system dependencies...[0m
+Hit:1 http://us.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 https://deb.nodesource.com/node_18.x nodistro InRelease
+Get:3 http://us.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Ign:4 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 InRelease
+Hit:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 Release
+Hit:6 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:8 http://us.archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 126 kB in 1s (161 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.5.0-2ubuntu10.1).
+wget is already the newest version (1.21.4-1ubuntu4).
+gnupg is already the newest version (2.4.4-2ubuntu17).
+cmdtest is already the newest version (0.32.14.gcdfe14e-6).
+0 upgraded, 0 newly installed, 0 to remove and 36 not upgraded.
+[0;32mNode.js is already installed.[0m
+[0;32mnpx is already installed.[0m
+[0;32mGit is already installed.[0m
+[0;32mlibssl1.1 is already installed.[0m
+[0;32mpm2 is already installed.[0m
+[0;32mInstalling MongoDB...[0m
+[0;32mMongoDB is already installed.[0m
+[0;32mMongoDB installation and setup complete.[0m
+[0;32mCreating /var/run/mongodb directory with correct permissions...[0m
+[0;32mEnsuring MongoDB is running...[0m
+[0;32mMongoDB is already running.[0m
+[0;32mSetting up the backend...[0m
+[0;32mSetting up the frontend...[0m
+[0;32mCleaning up temporary files...[0m
+[0;32mSetup complete. The backend is running on port 5000 and the frontend is running on port 3000.[0m

@@ -158,3 +158,12 @@ up to date, audited 273 packages in 2s
 found 0 vulnerabilities
 [0;32mserver.js already exists.[0m
 [0;32mStarting the backend server with pm2...[0m
+
+up to date, audited 273 packages in 824ms
+
+25 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[0;32mserver.js already exists.[0m
+[0;32mStarting the backend server with pm2...[0m

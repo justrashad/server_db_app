@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ServerList = ({ servers, setEditingServer, deleteServer }) => {
+    const [selectedServers, setSelectedServers] = useState([]);
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -9,12 +11,41 @@ const ServerList = ({ servers, setEditingServer, deleteServer }) => {
         return `${month}/${day}/${year}`;
     };
 
+    const handleSelectServer = (id) => {
+        setSelectedServers((prevSelected) =>
+            prevSelected.includes(id)
+                ? prevSelected.filter((serverId) => serverId !== id)
+                : [...prevSelected, id]
+        );
+    };
+
+    const handleDeleteSelected = () => {
+        if (window.confirm('Are you sure you want to delete the selected servers?')) {
+            selectedServers.forEach((id) => deleteServer(id));
+            setSelectedServers([]);
+        }
+    };
+
+    const handleDelete = (id) => {
+        if (window.confirm('Are you sure you want to delete this server?')) {
+            deleteServer(id);
+        }
+    };
+
     return (
         <div style={{ backgroundColor: 'white', color: 'black' }}>
             <h2 style={{ color: 'red' }}>Server List</h2>
+            <button
+                onClick={handleDeleteSelected}
+                disabled={selectedServers.length === 0}
+                style={{ backgroundColor: 'red', color: 'white', marginBottom: '10px' }}
+            >
+                Delete Selected
+            </button>
             <table border="1" style={{ backgroundColor: 'white', color: 'black' }}>
                 <thead>
                     <tr>
+                        <th>Select</th>
                         <th>System Name</th>
                         <th>IP Address</th>
                         <th>Function</th>
@@ -32,8 +63,15 @@ const ServerList = ({ servers, setEditingServer, deleteServer }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {servers.map(server => (
+                    {servers.map((server) => (
                         <tr key={server._id}>
+                            <td>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedServers.includes(server._id)}
+                                    onChange={() => handleSelectServer(server._id)}
+                                />
+                            </td>
                             <td>{server.systemName}</td>
                             <td>{server.ipAddress}</td>
                             <td>{server.function}</td>
@@ -48,8 +86,18 @@ const ServerList = ({ servers, setEditingServer, deleteServer }) => {
                             <td>{server.custEmail}</td>
                             <td>{server.customer}</td>
                             <td>
-                                <button onClick={() => setEditingServer(server)} style={{ backgroundColor: 'red', color: 'white' }}>Edit</button>
-                                <button onClick={() => deleteServer(server._id)} style={{ backgroundColor: 'red', color: 'white' }}>Delete</button>
+                                <button
+                                    onClick={() => setEditingServer(server)}
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Edit
+                                </button>
+                                <button
+                                    onClick={() => handleDelete(server._id)}
+                                    style={{ backgroundColor: 'red', color: 'white' }}
+                                >
+                                    Delete
+                                </button>
                             </td>
                         </tr>
                     ))}

@@ -24,29 +24,44 @@ const App = () => {
     }, [apiUrl]);
 
     const addServer = async (server) => {
-        try {
-            const response = await axios.post(`${apiUrl}/servers`, server);
-            setServers([...servers, response.data]);
-        } catch (error) {
-            console.error('Error adding server:', error);
+        if (window.confirm('Are you sure you want to add this server?')) {
+            try {
+                const response = await axios.post(`${apiUrl}/servers`, server);
+                setServers([...servers, response.data]);
+            } catch (error) {
+                console.error('Error adding server:', error);
+            }
         }
     };
 
     const updateServer = async (id, updatedServer) => {
-        try {
-            const response = await axios.put(`${apiUrl}/servers/${id}`, updatedServer);
-            setServers(servers.map(server => (server._id === id ? response.data : server)));
-        } catch (error) {
-            console.error('Error updating server:', error);
+        if (window.confirm('Are you sure you want to update this server?')) {
+            try {
+                const response = await axios.put(`${apiUrl}/servers/${id}`, updatedServer);
+                setServers(servers.map(server => (server._id === id ? response.data : server)));
+            } catch (error) {
+                console.error('Error updating server:', error);
+            }
         }
     };
 
     const deleteServer = async (id) => {
-        try {
-            await axios.delete(`${apiUrl}/servers/${id}`);
-            setServers(servers.filter(server => server._id !== id));
-        } catch (error) {
-            console.error('Error deleting server:', error);
+        if (Array.isArray(id)) {
+            await Promise.all(id.map(async (serverId) => {
+                try {
+                    await axios.delete(`${apiUrl}/servers/${serverId}`);
+                    setServers(servers.filter(server => server._id !== serverId));
+                } catch (error) {
+                    console.error('Error deleting server:', error);
+                }
+            }));
+        } else {
+            try {
+                await axios.delete(`${apiUrl}/servers/${id}`);
+                setServers(servers.filter(server => server._id !== id));
+            } catch (error) {
+                console.error('Error deleting server:', error);
+            }
         }
     };
 

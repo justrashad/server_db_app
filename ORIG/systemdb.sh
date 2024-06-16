@@ -13,6 +13,13 @@ BACKUP_DIR="backup"
 MONGO_BACKUP_DIR="$BACKUP_DIR/mongo"
 APP_BACKUP_DIR="$BACKUP_DIR/app"
 
+# MongoDB version
+MONGO_VERSION="6.0.6"
+MONGO_PACKAGE="mongodb-linux-x86_64-ubuntu2004-$MONGO_VERSION.tgz"
+
+# Node.js version
+NODE_VERSION="18.x"
+
 # Function to print debug messages in green
 debug_message() {
     echo -e "${GREEN_TEXT}$1${RESET_TEXT}" | tee -a $LOG_FILE
@@ -34,24 +41,18 @@ check_command_status() {
 # Function to backup MongoDB data
 backup_mongo() {
     debug_message "Backing up MongoDB data..."
-
     mkdir -p $MONGO_BACKUP_DIR
-
     mongodump --out $MONGO_BACKUP_DIR | tee -a $LOG_FILE
     check_command_status "Backing up MongoDB data"
-
     debug_message "MongoDB data backup completed."
 }
 
 # Function to backup application files
 backup_app_files() {
     debug_message "Backing up application files..."
-
     mkdir -p $APP_BACKUP_DIR
-
     cp -r server-management-app $APP_BACKUP_DIR | tee -a $LOG_FILE
     check_command_status "Backing up application files"
-
     debug_message "Application files backup completed."
 }
 
@@ -87,7 +88,7 @@ install_dependencies() {
 
     # Install Node.js and npm
     if ! command -v node &> /dev/null; then
-        curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - | tee -a $LOG_FILE
+        curl -fsSL https://deb.nodesource.com/setup_$NODE_VERSION | sudo -E bash - | tee -a $LOG_FILE
         check_command_status "Setting up Node.js repository"
         sudo apt-get install -y nodejs | tee -a $LOG_FILE
         check_command_status "Installing Node.js and npm"
@@ -128,16 +129,16 @@ install_mongodb() {
     # Check if MongoDB is already installed
     if ! command -v mongod &> /dev/null; then
         # Download MongoDB packages
-        wget -q https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-6.0.6.tgz | tee -a $LOG_FILE
+        wget -q https://fastdl.mongodb.org/linux/$MONGO_PACKAGE | tee -a $LOG_FILE
         check_command_status "Downloading MongoDB package"
 
         # Extract the package
-        tar -zxvf mongodb-linux-x86_64-ubuntu2004-6.0.6.tgz | tee -a $LOG_FILE
+        tar -zxvf $MONGO_PACKAGE | tee -a $LOG_FILE
         check_command_status "Extracting MongoDB package"
 
         # Move the extracted files to /usr/local/mongodb
         sudo mkdir -p /usr/local/mongodb
-        sudo mv mongodb-linux-x86_64-ubuntu2004-6.0.6/* /usr/local/mongodb
+        sudo mv mongodb-linux-x86_64-ubuntu2004-$MONGO_VERSION/* /usr/local/mongodb
         check_command_status "Moving MongoDB files"
 
         # Create symbolic links for MongoDB binaries
@@ -764,7 +765,7 @@ ensure_mongodb_running() {
 # Cleanup function
 cleanup() {
     debug_message "Cleaning up temporary files..."
-    rm -f mongodb-linux-x86_64-ubuntu2004-6.0.6.tgz
+    rm -f $MONGO_PACKAGE
     rm -f libssl1.1_1.1.1f-1ubuntu2_amd64.deb
     check_command_status "Cleaning up temporary files"
 }
