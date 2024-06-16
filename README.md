@@ -5,9 +5,9 @@ This project is a Server Management Application that allows you to manage and mo
 ## Features
 
 - **Server Listing**: View a list of servers with their details.
-- **Add Server**: Add new servers to the list.
-- **Edit Server**: Edit existing server details.
-- **Delete Server**: Delete servers from the list.
+- **Add Server**: Add new servers to the list with confirmation prompts.
+- **Edit Server**: Edit existing server details with confirmation prompts.
+- **Delete Server**: Delete servers from the list with confirmation prompts.
 - **File Upload**: Upload CSV files to import server data into MongoDB.
 - **Search**: Search servers by system name or IP address.
 
@@ -17,7 +17,7 @@ This project is a Server Management Application that allows you to manage and mo
 server-management-app/
 ├── client/
 │   ├── public/
-│   │   └── tag.jpg
+│   │   └── MDACC_Rev_RGB_TC_tag_V.jpg
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── FileUpload.js
@@ -72,7 +72,7 @@ server-management-app/
 
 6. **Move the Logo File**
 
-   - Ensure the logo file `tag.jpg` is in the `client/public` directory.
+   - Ensure the logo file `MDACC_Rev_RGB_TC_tag_V.jpg` is in the `client/public` directory.
 
 ## Usage
 
