@@ -146,6 +146,113 @@ To perform a restore, run the following script:
 ./restore.sh
 ```
 
+## PM2 Usage
+
+PM2 is a production-grade process manager for Node.js applications that allows you to keep applications alive forever, reload them without downtime, and facilitate common system admin tasks. 
+
+### Installation
+
+If you do not have PM2 installed globally, you can install it using npm:
+
+```bash
+npm install -g pm2
+```
+
+### Starting the Application with PM2
+
+1. **Start the Backend**
+
+   Start the backend server using PM2 to ensure it runs continuously and can be managed easily:
+
+   ```bash
+   pm2 start server.js --name backend
+   ```
+
+   This command will start the backend server and name the process "backend". You can check the status of the process using:
+
+   ```bash
+   pm2 status
+   ```
+
+2. **Start the Frontend**
+
+   Start the frontend development server using PM2:
+
+   ```bash
+   cd client
+   pm2 start npm --name frontend -- start
+   ```
+
+   This command will run the npm start script and name the process "frontend".
+
+### Managing PM2 Processes
+
+PM2 provides various commands to manage your processes:
+
+- **List all PM2 processes**:
+
+  ```bash
+  pm2 list
+  ```
+
+- **View logs**:
+
+  View the logs for a specific process (e.g., backend):
+
+  ```bash
+  pm2 logs backend
+  ```
+
+  View the logs for all processes:
+
+  ```bash
+  pm2 logs
+  ```
+
+- **Stop a process**:
+
+  Stop a specific process by name (e.g., frontend):
+
+  ```bash
+  pm2 stop frontend
+  ```
+
+- **Restart a process**:
+
+  Restart a specific process by name (e.g., backend):
+
+  ```bash
+  pm2 restart backend
+  ```
+
+- **Delete a process**:
+
+  Delete a specific process by name (e.g., frontend):
+
+  ```bash
+  pm2 delete frontend
+  ```
+
+### Saving the PM2 Process List
+
+To ensure your processes start automatically after a server reboot, save the PM2 process list:
+
+```bash
+pm2 save
+```
+
+This command will save the current list of processes, which can be reloaded using the startup script.
+
+### Generating a Startup Script
+
+Generate a startup script to automatically restart PM2 and your applications on system boot:
+
+```bash
+pm2 startup
+```
+
+Follow the instructions provided by the command to configure the startup script for your system.
+
 ## Deployment
 
 For deployment, ensure that the backend and frontend are properly configured and running on a server. You can use PM2 to manage the processes:
