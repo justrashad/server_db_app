@@ -89,7 +89,7 @@ ITE Open Systems Server Management is a web-based application designed to manage
 ### Frontend Setup
 
 - **React Environment Variables**:
-    - `REACT_APP_BACKEND_URL`: URL for the backend API (e.g., `http://10.113.111.113:5000`).
+    - `REACT_APP_BACKEND_URL`: URL for the backend API (e.g., `http://server_ip:5000`).
 
 ## Usage
 
@@ -110,7 +110,7 @@ ITE Open Systems Server Management is a web-based application designed to manage
 ### Accessing the Application
 
 - **Frontend**:
-    - Open a web browser and navigate to the frontend URL (e.g., `http://10.113.111.113:3000`).
+    - Open a web browser and navigate to the frontend URL (e.g., `http://server_ip:3000`).
 
 ### Data Management
 
